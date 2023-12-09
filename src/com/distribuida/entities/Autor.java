@@ -1,5 +1,8 @@
 package com.distribuida.entities;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Autor {
 
 	private int idAutor;
@@ -9,9 +12,9 @@ public class Autor {
 	private String direccion;
 	private String telefono;
 	private String correo;
-
+	
 	public Autor() {}
-
+	
 	public int getIdAutor() {
 		return idAutor;
 	}
@@ -59,7 +62,7 @@ public class Autor {
 		return "Autor [idAutor=" + idAutor + ", nombre=" + nombre + ", apellido=" + apellido + ", pais=" + pais
 				+ ", direccion=" + direccion + ", telefono=" + telefono + ", correo=" + correo + "]";
 	}
-
-
+	
+	
 
 }

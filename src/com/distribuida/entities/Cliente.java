@@ -1,7 +1,10 @@
 package com.distribuida.entities;
 
-public class Cliente {
+import org.springframework.stereotype.Component;
 
+@Component
+public class Cliente {
+	
 	private int idCliente;
 	private String cedula;
 	private String nombre;
@@ -9,7 +12,7 @@ public class Cliente {
 	private String direccion;
 	private String telefono;
 	private String correo;
-
+	
 	public Cliente() {}
 
 	public int getIdCliente() {

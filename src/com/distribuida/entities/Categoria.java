@@ -1,14 +1,17 @@
 package com.distribuida.entities;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Categoria {
 
 	private int idCategoria;
 	private String Categoria;
 	private String Descripcion;
-
+	
 	public Categoria() {}
-
-
+	
+	
 	public String getDescripcion() {
 		return Descripcion;
 	}
@@ -32,6 +35,6 @@ public class Categoria {
 	public String toString() {
 		return "Categoria [idCategoria=" + idCategoria + ", Categoria=" + Categoria + "]";
 	}
-
-
+	
+	
 }

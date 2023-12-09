@@ -1,18 +1,23 @@
 package com.distribuida.entities;
 
-public class Factura {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
+public class Factura {
+	
 	private int idFactura;
 	private String numFactura;
 	private String fecha;
 	private double totalNeto;
 	private double iva;
 	private double total;
-
+	
+	@Autowired
 	private Cliente cliente;
-
+	
 	public Factura () {}
-
+	
 	public Factura (Cliente cliente) {
 		this.cliente=cliente;
 	}
@@ -72,5 +77,5 @@ public class Factura {
 				+ totalNeto + ", iva=" + iva + ", total=" + total + ", cliente=" + cliente + "]";
 	}
 
-
+	
 }

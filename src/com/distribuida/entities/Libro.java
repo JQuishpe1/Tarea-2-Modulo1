@@ -1,7 +1,11 @@
 package com.distribuida.entities;
 
-public class Libro {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
+public class Libro {
+	
 	private int idLibro;
 	private String titulo;
 	private String editorial;
@@ -16,12 +20,14 @@ public class Libro {
 	private String portada;
 	private String presentacion;
 	private double precio;
-
+	
+	@Autowired
 	private Autor autor;
+	@Autowired
 	private Categoria categoria;
-
+	
 	public Libro() {}
-
+	
 
 	public Autor getAutor() {
 		return autor;
@@ -159,5 +165,5 @@ public class Libro {
 	}
 
 
-
+	
 }

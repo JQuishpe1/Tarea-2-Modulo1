@@ -1,14 +1,22 @@
 package com.distribuida.entities;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class DatosEmpresa {
 
+	@Value("${empresa}")
 	private String empresa;
+	@Value("${direccion}")
 	private String direccion;
+	@Value("${telefono}")
 	private String telefono;
+	@Value("${correo}")
 	private String correo;
-
+	
 	public DatosEmpresa() {}
-
+	
 	public String getEmpresa() {
 		return empresa;
 	}
@@ -38,5 +46,5 @@ public class DatosEmpresa {
 		return "DatosEmpresa [empresa=" + empresa + ", direccion=" + direccion + ", telefono=" + telefono + ", correo="
 				+ correo + "]";
 	}
-
+	
 }

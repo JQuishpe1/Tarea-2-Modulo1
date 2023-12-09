@@ -1,6 +1,6 @@
 package com.distribuida.principal;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.distribuida.entities.Autor;
 import com.distribuida.entities.Categoria;
@@ -14,7 +14,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("aplicationContext.xml");
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
 		Cliente cliente = context.getBean("idCliente",Cliente.class);
 		Factura factura = context.getBean("idFactura",Factura.class);
@@ -34,54 +34,58 @@ public class Principal {
 		cliente.setCorreo("joon6542@gmail.com");
 
 		//FACTURA
-		factura.setIdFactura(1);
-		factura.setNumFactura("N.0001");
-		factura.setFecha("8/12/2023");
-		factura.setTotalNeto(5.6);
-		factura.setIva(1.12);
-		factura.setTotal(factura.getTotalNeto()*factura.getIva());
+				factura.setIdFactura(1);
+				factura.setNumFactura("N.0001");
+				factura.setFecha("23/11/2023");
+				factura.setTotalNeto(5.6);
+				factura.setIva(1.12);
+				factura.setTotal(factura.getTotalNeto()*factura.getIva());
+				
+				//LIBRO
+				libro.setIdLibro(1);
+				libro.setTitulo("Ingenieria del Software Un Enfoque Practico");
+				libro.setEditorial("DERECHOS RESERVADOS © 2010, 2005, 2002 respecto a la tercera edición en español por\r\n"
+						+ "McGRAW-HILL INTERAMERICANA EDITORES, S.A. DE C.V");
+				libro.setNumPaginas(810);
+				libro.setEdicion(7);
+				libro.setIdioma("Version Español");
+				libro.setFechaPublicacion("2010");
+				libro.setDescripcion("Refiere su contenido a la calidad del software.");
+				libro.setTipoPasta("EnPastado");
+				libro.setISBN("9786071503145");
+				libro.setNumEjemplares(30);
+				libro.setPortada("Capa Carton");
+				libro.setPresentacion("el software de computadora triunfa (al satisfacer las necesidades de las personas \r\n"
+						+ "que lo usan, trabajar sin fallos durante largos periodos, será fácil de modificar e incluso \r\n"
+						+ "más fácil de usar) puede y debe cambiar las cosas a fin de mejorar.");
+				libro.setPrecio(5.6);
+				
+				
+				//CATEGORIA
+				categoria.setIdCategoria(1);
+				categoria.setCategoria("Software");
+				categoria.setDescripcion("La calidad del Software");
+				
+				//AUTOR
+				autor.setIdAutor(1);
+				autor.setNombre("Roger S.");
+				autor.setApellido("Pressman");
+				autor.setPais("Estados Unidos");
+				autor.setDireccion("N/A");
+				autor.setTelefono("337597-7");
+				autor.setCorreo("N/A");
+				
+				
+				//IMPRIMIR
+				System.out.println(datosEmpresa.toString());
+				System.out.println(autor.toString());
+				System.out.println(categoria.toString());
+				System.out.println(libro.toString());
+				System.out.println(factura.toString());
+				System.out.println(cliente.toString());
+				System.out.println(detalleFactura.toString());
+				
+				context.close();
+			}
 
-		//LIBRO
-		libro.setIdLibro(1);
-		libro.setTitulo("Ingenieria del Software Un Enfoque Practico");
-		libro.setEditorial("DERECHOS RESERVADOS © 2010, 2005, 2002 respecto a la tercera edición en español por\r\n"
-				+ "McGRAW-HILL INTERAMERICANA EDITORES, S.A. DE C.V");
-		libro.setNumPaginas(810);
-		libro.setEdicion(7);
-		libro.setIdioma("Version Español");
-		libro.setFechaPublicacion("2010");
-		libro.setDescripcion("Refiere su contenido a la calidad del software.");
-		libro.setTipoPasta("EnPastado");
-		libro.setISBN("9786071503145");
-		libro.setNumEjemplares(30);
-		libro.setPortada("Capa Carton");
-		libro.setPresentacion("el software de computadora triunfa (al satisfacer las necesidades de las personas \r\n"
-				+ "que lo usan, trabajar sin fallos durante largos periodos, será fácil de modificar e incluso \r\n"
-				+ "más fácil de usar) puede y debe cambiar las cosas a fin de mejorar.");
-		libro.setPrecio(5.6);
-
-
-		//CATEGORIA
-		categoria.setIdCategoria(1);
-		categoria.setCategoria("Software");
-		categoria.setDescripcion("La calidad del Software");
-
-		//AUTOR
-		autor.setIdAutor(1);
-		autor.setNombre("Roger S.");
-		autor.setApellido("Pressman");
-		autor.setPais("Estados Unidos");
-		autor.setDireccion("N/A");
-		autor.setTelefono("337597-7");
-		autor.setCorreo("N/A");
-
-
-		//IMPRIMIR
-		System.out.println(datosEmpresa.toString());
-		System.out.println(libro.toString());
-		System.out.println(detalleFactura.toString());
-
-		context.close();
-	}
-
-}
+		}
